@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+#pragma warning disable CA2254
 // ReSharper disable MemberCanBePrivate.Global
 
 namespace Essentials.Logging.Extensions;
@@ -18,7 +19,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsTrace(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsTrace())
+        if (!logger.LogLevelIsTrace())
             return logger;
 
         logAction();
@@ -52,7 +53,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsDebug(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsDebug())
+        if (!logger.LogLevelIsDebug())
             return logger;
 
         logAction();
@@ -82,7 +83,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsDebugOrLow(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsDebugOrLow())
+        if (!logger.LogLevelIsDebugOrLow())
             return logger;
 
         logAction();
@@ -112,7 +113,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsDebugOrHigher(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsDebugOrHigher())
+        if (!logger.LogLevelIsDebugOrHigher())
             return logger;
 
         logAction();
@@ -146,7 +147,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsInfo(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsInfo())
+        if (!logger.LogLevelIsInfo())
             return logger;
 
         logAction();
@@ -176,7 +177,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsInfoOrLow(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsInfoOrLow())
+        if (!logger.LogLevelIsInfoOrLow())
             return logger;
 
         logAction();
@@ -206,7 +207,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsInfoOrHigher(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsInfoOrHigher())
+        if (!logger.LogLevelIsInfoOrHigher())
             return logger;
 
         logAction();
@@ -240,7 +241,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsWarn(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsWarn())
+        if (!logger.LogLevelIsWarn())
             return logger;
 
         logAction();
@@ -270,7 +271,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsWarnOrLow(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsWarnOrLow())
+        if (!logger.LogLevelIsWarnOrLow())
             return logger;
 
         logAction();
@@ -300,7 +301,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsWarnOrHigher(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsWarnOrHigher())
+        if (!logger.LogLevelIsWarnOrHigher())
             return logger;
 
         logAction();
@@ -334,7 +335,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsError(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsError())
+        if (!logger.LogLevelIsError())
             return logger;
 
         logAction();
@@ -364,7 +365,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsErrorOrLow(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsErrorOrLow())
+        if (!logger.LogLevelIsErrorOrLow())
             return logger;
 
         logAction();
@@ -394,7 +395,7 @@ public static class MicrosoftLoggerExtensions
     /// <returns>Логгер</returns>
     public static ILogger LogIfLevelIsErrorOrHigher(this ILogger logger, Action logAction)
     {
-        if (!logger.LevelIsErrorOrHigher())
+        if (!logger.LogLevelIsErrorOrHigher())
             return logger;
 
         logAction();

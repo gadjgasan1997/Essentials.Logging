@@ -16,7 +16,7 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsTrace(this ILogger logger) => logger.IsEnabled(LogLevel.Trace);
+    public static bool LogLevelIsTrace(this ILogger logger) => logger.IsEnabled(LogLevel.Trace);
     
     #endregion
 
@@ -27,10 +27,10 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsDebug(this ILogger logger)
+    public static bool LogLevelIsDebug(this ILogger logger)
     {
         // Все логгеры, уровень которых выше Debug
-        if (logger.IsDisabled(LogLevel.Debug))
+        if (logger.LogIsDisabled(LogLevel.Debug))
             return false;
 
         // Все логгеры, уровень которых равен Trace
@@ -45,14 +45,14 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsDebugOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Debug);
+    public static bool LogLevelIsDebugOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Debug);
     
     /// <summary>
     /// Определяет, что уровень логирования логгера не ниже <see cref="LogLevel.Debug" />
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsDebugOrHigher(this ILogger logger) => logger.IsDisabled(LogLevel.Trace);
+    public static bool LogLevelIsDebugOrHigher(this ILogger logger) => logger.LogIsDisabled(LogLevel.Trace);
 
     #endregion
 
@@ -63,10 +63,10 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsInfo(this ILogger logger)
+    public static bool LogLevelIsInfo(this ILogger logger)
     {
         // Все логгеры, уровень которых выше Information
-        if (logger.IsDisabled(LogLevel.Information))
+        if (logger.LogIsDisabled(LogLevel.Information))
             return false;
 
         // Все логгеры, уровень которых ниже или равен Debug
@@ -81,14 +81,14 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsInfoOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Information);
+    public static bool LogLevelIsInfoOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Information);
     
     /// <summary>
     /// Определяет, что уровень логирования логгера не ниже <see cref="LogLevel.Information" />
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsInfoOrHigher(this ILogger logger) => logger.IsDisabled(LogLevel.Debug);
+    public static bool LogLevelIsInfoOrHigher(this ILogger logger) => logger.LogIsDisabled(LogLevel.Debug);
     
     #endregion
 
@@ -99,10 +99,10 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsWarn(this ILogger logger)
+    public static bool LogLevelIsWarn(this ILogger logger)
     {
         // Все логгеры, уровень которых выше Warning
-        if (logger.IsDisabled(LogLevel.Warning))
+        if (logger.LogIsDisabled(LogLevel.Warning))
             return false;
 
         // Все логгеры, уровень которых ниже или равен Information
@@ -117,14 +117,14 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsWarnOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Warning);
+    public static bool LogLevelIsWarnOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Warning);
     
     /// <summary>
     /// Определяет, что уровень логирования логгера не ниже <see cref="LogLevel.Warning" />
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsWarnOrHigher(this ILogger logger) => logger.IsDisabled(LogLevel.Information);
+    public static bool LogLevelIsWarnOrHigher(this ILogger logger) => logger.LogIsDisabled(LogLevel.Information);
 
     #endregion
     
@@ -135,10 +135,10 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsError(this ILogger logger)
+    public static bool LogLevelIsError(this ILogger logger)
     {
         // Все логгеры, уровень которых равен Critical
-        if (logger.IsDisabled(LogLevel.Error))
+        if (logger.LogIsDisabled(LogLevel.Error))
             return false;
 
         // Все логгеры, уровень которых ниже или равен Warning
@@ -153,14 +153,14 @@ public static class CheckLoggerLevelExtensions
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsErrorOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Error);
+    public static bool LogLevelIsErrorOrLow(this ILogger logger) => logger.IsEnabled(LogLevel.Error);
     
     /// <summary>
     /// Определяет, что уровень логирования логгера не ниже <see cref="LogLevel.Error" />
     /// </summary>
     /// <param name="logger">Логгер</param>
     /// <returns></returns>
-    public static bool LevelIsErrorOrHigher(this ILogger logger) => logger.IsDisabled(LogLevel.Warning);
+    public static bool LogLevelIsErrorOrHigher(this ILogger logger) => logger.LogIsDisabled(LogLevel.Warning);
     
     #endregion
 
@@ -170,5 +170,5 @@ public static class CheckLoggerLevelExtensions
     /// <param name="logger">Логгер</param>
     /// <param name="level">Уровень</param>
     /// <returns></returns>
-    public static bool IsDisabled(this ILogger logger, LogLevel level) => !logger.IsEnabled(level);
+    public static bool LogIsDisabled(this ILogger logger, LogLevel level) => !logger.IsEnabled(level);
 }
